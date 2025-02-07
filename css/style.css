@@ -58,72 +58,488 @@ body {
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   position: relative;
-  transition: transform 0.3s ease;
+  transition: all 0.4s ease-in-out;
+  height: auto; /* Para que ajuste la altura correctamente */
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 10px;
 }
 
-.experience-card:hover {
-  transform: translateY(-5px);
-}
-
+/* Imagen */
 .experience-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
 
+/* Contenido de la tarjeta */
 .card-content {
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
+/* Descripción y precio */
 .card-description {
-  font-size: 0.9rem;
-  color: #666;
-  margin: 10px 0;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
 }
 
 .card-price {
   color: #ffd700;
   font-weight: bold;
   font-size: 1.2rem;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
+/* Ocultar la información extra por defecto */
+.extra-info {
+  display: none;
+  font-size: 0.9rem;
+  color: #666;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Expandir la tarjeta */
+.experience-card.expanded {
+  min-height: 380px; /* Aumenta la altura */
+}
+
+/* Mostrar la información cuando la tarjeta esté expandida */
+.experience-card.expanded .extra-info {
+  display: block;
+  opacity: 1;
+}
+
+/* Botón de Ver Más */
 .btn-ver-mas {
   width: 100%;
   background: transparent;
   color: #FF6F3C;
   border: none;
-  padding: 10px;
-  margin-top: auto;
+  padding: 10px 15px;
+  cursor: pointer;
   transition: all 0.3s ease;
+  margin-top: auto;
+  border-radius: 6px; 
 }
 
-.experience-card:hover .btn-ver-mas {
+.experience-card.expanded .btn-ver-mas {
   background: #FF6F3C;
   color: white;
 }
-/* Testimonios */
+
+.btn-ver-mas:hover {
+  background: #FF6F3C;
+  color: white;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+  border-radius: 10px; /* Hace que el botón se redondee más al pasar el cursor */
+}
+
+/* Sección de testimonios */
 .testimonios {
-    background-color: #FFC93C;
-    padding: 40px;
+  background-color: #FFC93C;
+  padding: 60px;
 }
 
-/* Call to Action */
+/* Contenedor del carrusel de testimonios */
+.testimonios-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  border: 2px solid black;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  min-height: 250px; /* Asegura que todas las tarjetas tengan el mismo tamaño */
+}
+
+/* Botones de navegación */
+.arrow {
+  background: transparent;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease-in-out;
+}
+
+.arrow:hover {
+  transform: scale(1.3);
+}
+
+/* Sección de testimonios */
+.testimonios {
+  background-color: #FFC93C;
+  padding: 60px;
+}
+
+/* Contenedor del carrusel */
+.testimonios-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  border: 2px solid black;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  min-height: 280px; /* Fija altura uniforme */
+  position: relative;
+}
+
+/* Botones de navegación */
+.arrow {
+  background: transparent;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease-in-out;
+}
+
+.arrow:hover {
+  transform: scale(1.3);
+}
+
+/* Sección de testimonios */
+.testimonios {
+  background-color: #FFC93C;
+  padding: 60px;
+}
+
+/* Contenedor del carrusel */
+.testimonios-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  border: 2px solid black;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  min-height: 280px;
+  position: relative;
+}
+
+/* Botones de navegación */
+.arrow {
+  background: transparent;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease-in-out;
+}
+
+.arrow:hover {
+  transform: scale(1.3);
+}
+
+/* Contenedor del testimonio */
+.testimonial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Imagen del usuario */
+.user-image-container {
+  flex-shrink: 0;
+  width: 200px; /* Aumentamos el tamaño del contenedor */
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-image {
+  width: 200px; /* Aumentamos el tamaño de la imagen */
+  height: 200px;
+  border: 3px solid blue;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+
+/* Tarjeta del testimonio */
+.testimonial-card {
+  width: 100%;
+  max-width: 500px;
+  min-height: 200px; /* 🔥 Ajustamos el mínimo para que mantenga la forma */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  gap: 12px; /* 🔥 Espaciado mejorado */
+}
+
+/* Nombre del cliente */
+.client-name {
+  font-weight: bold;
+  background: lightgray;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  width: 100%; /* 🔥 Se iguala a todo el ancho */
+  max-width: 350px; /* 🔥 Tamaño fijo */
+  text-align: center;
+}
+
+/* Comentario */
+.client-comment {
+  background: lightgray;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%; /* 🔥 Se ajusta igual que el nombre */
+  max-width: 350px; /* 🔥 Misma anchura que el nombre */
+  min-height: 70px; /* 🔥 Misma altura en todas */
+  text-align: center;
+}
+
+/* Compra verificada */
+.verified {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  color: green;
+  margin: 10px 0;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: black;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* Estrellas */
+.stars {
+  font-size: 22px;
+}
+
+.star {
+  color: gray;
+}
+
+.star.filled {
+  color: yellow;
+}
+
+
+
 .cta {
-    background-color: #155263;
-    color: white;
-    padding: 40px;
-    text-align: center;
+  background: linear-gradient(135deg, #155263 0%, #1a6b82 100%);
+  padding: 60px 40px;
+  margin: 60px auto;
+  position: relative;
+  overflow: hidden;
+  max-width: 1000px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
-.cta .btn {
-    background-color: #FF6F3C;
-    color: white;
+/* El resto del CSS se mantiene igual */
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../assets/img/pattern.png') repeat;
+  opacity: 0.1;
+  border-radius: 20px;
 }
 
-/* Footer */
-.footer {
-    background-color: #155263;
-    color: white;
-    padding: 20px;
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
 }
+
+
+.cta-title {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.cta-description {
+  color: rgba(255,255,255,0.9);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background: #FF6F3C;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  background: #ff835c;
+}
+
+.discount-badge {
+  background: #FFC93C;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .cta-title {
+      font-size: 2rem;
+  }
+  
+  .cta-description {
+      font-size: 1rem;
+  }
+}
+
+.footer-main {
+  background-color: #155263;
+  color: white;
+  padding: 60px 0 30px;
+  text-align: center;
+}
+
+/* Sección del footer */
+.footer-main h4 {
+  color: white;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.footer-main h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #FF6F3C;
+}
+
+/* Estilos de cada sección */
+.footer-info, .footer-contact, .footer-social {
+  margin-bottom: 30px;
+}
+
+.footer-info p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.footer-contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-contact li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-contact i {
+  color: #FF6F3C;
+  font-size: 1.2rem;
+}
+
+/* Redes sociales */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  color: #155263;
+  font-size: 1.2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.social-links a:hover {
+  background: #FF6F3C;
+  color: white;
+}
+
+/* Links generales */
+.footer-link {
+  display: block;
+  margin-top: 10px;
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-link:hover {
+  color: #FF6F3C;
+}
+
+/* Línea Divisoria */
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 30px 0;
+}
+
+/* Parte inferior */
+.footer-bottom {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
