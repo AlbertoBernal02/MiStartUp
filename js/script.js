@@ -66,7 +66,7 @@ const testimonios = [
         },
         {
             name: "Juan Pérez",
-            image: "../assets/img/iconopersona2.webp",
+            image: "../assets/img/OUSI.jpg",
             text: "No fue lo que esperaba, pero estuvo bien.",
             stars: 4
         }

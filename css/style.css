@@ -1,5 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* Negrita */
+}
+
+body, p, a, li, span, button {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p {
+  line-height: 1.6; /* Mejor legibilidad */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,38 +34,90 @@ body {
     background-color: #F9F7F7;
 }
 
+/* Asegura que el header se mantenga fijo y no sea solapado */
 .navbar {
-    background-color: #155263;
-    height: 80px; /* Mantiene el tamaño fijo del header */
-    display: flex;
-    align-items: center;
+  background-color: #155263;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  position: fixed; /* Lo mantiene fijo arriba */
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Se asegura de que esté por encima de todo */
+  padding: 10px 20px;
 }
 
+/* Ajusta el tamaño del logo */
 .navbar-brand img {
-    height: 150px;
-    width: auto; /* Mantiene la proporción de la imagen */
-    object-fit: contain;
+  height: 140px; 
+  width: auto;
+  object-fit: contain;
 }
+
+/* Botón "Registrarse" */
 .navbar .btn-outline-light {
   border-color: white;
   color: white;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Suaviza el efecto */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .navbar .btn-outline-light:hover {
-  background-color: #FF6F3C; /* Color cuando se pasa el cursor */
+  background-color: #FF6F3C;
   border-color: #FF6F3C;
-  color: white; /* Mantenemos el texto en blanco */
+  color: white;
 }
 
+/* Asegura margen al carrusel para que no lo tape el header */
 #carouselExperiencias {
-  max-height: 500px; /* Ajusta la altura del carrusel */
-  overflow: hidden; /* Evita que sobresalgan elementos */
+  margin-top: 80px; /* Ajusta el espacio según la altura del header */
+  max-height: 500px;
+  overflow: hidden;
 }
 
 #carouselExperiencias img {
-  object-fit: cover; /* Hace que la imagen cubra el espacio sin deformarse */
-  height: 500px; /* Ajusta la altura de las imágenes */
+  object-fit: cover;
+  height: 500px;
+}
+
+/* SOLUCIÓN PARA EL MENÚ EN TABLET Y MÓVIL */
+@media (max-width: 992px) { /* Tablet y móvil */
+  .navbar-collapse {
+      background: #155263;
+      text-align: center;
+      padding: 15px;
+      position: absolute;
+      width: 100%;
+      top: 80px; /* Se coloca justo debajo del navbar */
+      left: 0;
+      z-index: 999;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  /* Cuando el menú está abierto, empuja el carrusel */
+  .navbar-collapse.show + #carouselExperiencias {
+      margin-top: 240px; 
+  }
+
+  /* Asegura que los enlaces estén alineados */
+  .navbar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+  }
+
+  .nav-item {
+      padding: 10px;
+  }
+
+  .nav-link {
+      color: white;
+      font-size: 1.2rem;
+  }
+
+  .nav-link:hover {
+      color: #FF6F3C;
+  }
 }
 
 
@@ -50,6 +125,7 @@ body {
     width: 100%;
     border-radius: 10px;
 }
+
 
 /* Cards */
 .experience-card {
@@ -357,8 +433,26 @@ body {
   max-width: 1000px;
   border-radius: 20px;
   box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
 }
 
+/* Logo dentro de la CTA */
+.cta-logo {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  width: 200px;
+  height: auto;
+}
+
+.cta-logo img {
+  width: 100%;
+  height: auto;
+}
 /* El resto del CSS se mantiene igual */
 .cta::before {
   content: '';
@@ -432,6 +526,12 @@ body {
   .cta-description {
       font-size: 1rem;
   }
+
+  .cta-logo {
+      bottom: 15px;
+      right: 15px;
+      width: 80px;
+  }
 }
 
 .footer-main {
@@ -466,22 +566,42 @@ body {
   margin-bottom: 30px;
 }
 
+/* Sección de Información */
 .footer-info p {
   font-size: 1rem;
   opacity: 0.8;
 }
 
+/* Centrar la sección en el medio */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Mantiene el título "Contacto" centrado */
+  text-align: center;
+  margin: 0 auto; /* Centra la sección en la pantalla */
+  max-width: 300px; /* Define un ancho fijo */
+}
+
+/* Lista de contacto */
 .footer-contact ul {
   list-style: none;
   padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea el contenido a la izquierda */
+  text-align: left; /* Asegura que el texto también esté alineado a la izquierda */
+  gap: 10px; /* Espaciado uniforme */
+  width: 100%;
 }
 
+/* Íconos y texto alineados */
 .footer-contact li {
   font-size: 1rem;
-  margin-bottom: 10px;
   display: flex;
   align-items: center;
   gap: 10px;
+  justify-content: flex-start; /* Alinea los íconos y el texto a la izquierda */
 }
 
 .footer-contact i {
@@ -542,4 +662,5 @@ body {
   font-size: 0.9rem;
   opacity: 0.7;
 }
+
 
