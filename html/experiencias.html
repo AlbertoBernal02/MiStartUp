@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FeelVenture</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Swiper & Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="../js/script.js" defer></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Google Fonts: Montserrat y Lato -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"
+          ><img src="../assets/img/logo Feelventure.png" alt="FeelVenture"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="experiencias.html">Experiencias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Iniciar Sesión</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn btn-outline-light" href="#">Registrarse</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Filtros de Experiencias -->
+    <section class="container filter-section">
+      <h2 class="text-center">Explora nuestras experiencias</h2>
+      <div class="text-center">
+        <button class="btn filter-btn active" data-category="all">Todas</button>
+        <button class="btn filter-btn" data-category="aventura">
+          Aventura
+        </button>
+        <button class="btn filter-btn" data-category="cultural">
+          Cultural
+        </button>
+        <button class="btn filter-btn" data-category="gastronomia">
+          Gastronomía
+        </button>
+        <button class="btn filter-btn" data-category="relax">Relax</button>
+      </div>
+    </section>
+
+    <section class="container py-5">
+      <div
+        class="row mt-4 experience-container row-cols-lg-3 row-cols-md-3 row-cols-sm-2 row-cols-1 gx-md-4 gy-4"
+      >
+        <!-- Experiencia 1 - Aventura -->
+        <div class="col experience-card" data-category="aventura">
+          <img src="../assets/img/card1.webp" alt="Senderismo en la Sierra" />
+          <div class="card-content">
+            <p class="card-description">🏕️ Senderismo en la Sierra</p>
+            <p class="card-price">79€</p>
+            <p class="extra-info">
+              Explora rutas increíbles rodeado de naturaleza.
+            </p>
+            <button class="btn-ver-mas">Ver más</button>
+          </div>
+        </div>
+
+        <!-- Experiencia 2 - Aventura -->
+        <div class="col experience-card" data-category="aventura">
+          <img
+            src="../assets/img/car2_1.webp"
+            alt="Parapente sobre las Montañas"
+          />
+          <div class="card-content">
+            <p class="card-description">🪂 Parapente sobre las Montañas</p>
+            <p class="card-price">129€</p>
+            <p class="extra-info">Vuela sobre paisajes espectaculares.</p>
+            <button class="btn-ver-mas">Ver más</button>
+          </div>
+        </div>
+
+        <!-- Experiencia 3 - Cultural -->
+        <div class="col experience-card" data-category="cultural">
+          <img src="../assets/img/card3_1.webp" alt="Escape Room" />
+          <div class="card-content">
+            <p class="card-description">
+              🧩 Escape Room: Los Secretos del Brujo
+            </p>
+            <p class="card-price">25€/persona</p>
+            <p class="extra-info">Descifra enigmas y encuentra la salida.</p>
+            <button class="btn-ver-mas">Ver más</button>
+          </div>
+        </div>
+
+        <!-- Experiencia 4 - Gastronomía -->
+        <div class="col experience-card" data-category="gastronomia">
+          <img src="../assets/img/tour.webp" alt="Tour Gastronómico" />
+          <div class="card-content">
+            <p class="card-description">🍽️ Tour Gastronómico</p>
+            <p class="card-price">59€</p>
+            <p class="extra-info">Degusta los mejores platos locales.</p>
+            <button class="btn-ver-mas">Ver más</button>
+          </div>
+        </div>
+
+        <!-- Experiencia 5 - Relax -->
+        <div class="col experience-card" data-category="relax">
+          <img src="../assets/img/card5.webp" alt="Spa de Lujo" />
+          <div class="card-content">
+            <p class="card-description">💆 Spa de Lujo</p>
+            <p class="card-price">99€</p>
+            <p class="extra-info">Disfruta de un día de relajación total.</p>
+            <button class="btn-ver-mas">Ver más</button>
+          </div>
+        </div>
+
+        <!-- Experiencia 6 - Aventura -->
+        <div class="col experience-card" data-category="aventura">
+          <img src="../assets/img/Rio_Salvaje_Jalcomulco.webp" alt="Rafting en el río" />
+          <div class="card-content">
+            <p class="card-description">🚣‍♂️ Rafting en el río</p>
+            <p class="card-price">89€</p>
+            <p class="extra-info">
+              Siente la adrenalina mientras navegas por aguas bravas.
+            </p>
+            <button class="btn-ver-mas">Ver más</button>
+          </div>
+        </div>
+
+        <!-- Experiencia 7 - Cultural (NUEVA) -->
+        <div class="col experience-card" data-category="cultural">
+          <img src="../assets/img/museo.webp" alt="Visita al Museo Histórico" />
+          <div class="card-content">
+            <p class="card-description">
+              🎭 Visita Guiada a un Museo Histórico
+            </p>
+            <p class="card-price">30€</p>
+            <p class="extra-info">
+              Descubre la historia y el arte con un guía especializado.
+            </p>
+            <button class="btn-ver-mas">Ver más</button>
+          </div>
+        </div>
+
+        <!-- Experiencia 8 - Gastronomía (NUEVA) -->
+        <div class="col experience-card" data-category="gastronomia">
+          <img src="../assets/img/vinos.webp" alt="Cata de Vinos" />
+          <div class="card-content">
+            <p class="card-description">🍷 Cata de Vinos en Viñedos</p>
+            <p class="card-price">45€</p>
+            <p class="extra-info">
+              Prueba vinos exclusivos en un viñedo espectacular.
+            </p>
+            <button class="btn-ver-mas">Ver más</button>
+          </div>
+        </div>
+
+        <!-- Experiencia 9 - Relax (NUEVA) -->
+        <div class="col experience-card" data-category="relax">
+          <img src="../assets/img/yoga.webp" alt="Yoga al Amanecer" />
+          <div class="card-content">
+            <p class="card-description">🏖️ Yoga al Amanecer en la Playa</p>
+            <p class="card-price">35€</p>
+            <p class="extra-info">
+              Relájate con una sesión de yoga frente al mar.
+            </p>
+            <button class="btn-ver-mas">Ver más</button>
+          </div>
+        </div>
+
+        <!-- Experiencia 10 - Aventura (NUEVA) -->
+        <div class="col experience-card" data-category="aventura">
+          <img src="../assets/img/caballo.webp" alt="Paseo a Caballo" />
+          <div class="card-content">
+            <p class="card-description">🏇 Paseo a Caballo por la Montaña</p>
+            <p class="card-price">70€</p>
+            <p class="extra-info">
+              Explora rutas naturales a caballo en un recorrido único.
+            </p>
+            <button class="btn-ver-mas">Ver más</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <!-- Footer Mejorado -->
+  <footer class="footer-main">
+    <div class="container">
+      <div class="row">
+        <!-- Información de la Empresa -->
+        <div class="col-lg-4 col-md-12 footer-info">
+          <h4>FeelVenture</h4>
+          <p>
+            Descubre experiencias únicas y vive momentos inolvidables con
+            FeelVenture.
+          </p>
+          <a href="#inicio" class="footer-link">Volver al Inicio</a>
+        </div>
+
+        <!-- Contacto -->
+        <div class="col-lg-4 col-md-6 footer-contact">
+          <h4>Contacto</h4>
+          <ul class="contact-list">
+            <li>
+              <i class="fa-solid fa-location-dot"></i> Av. Principal 123, Ciudad
+            </li>
+            <li><i class="fa-solid fa-phone"></i> +123 456 789</li>
+            <li><i class="fa-solid fa-envelope"></i> info@feelventure.com</li>
+          </ul>
+        </div>
+
+        <!-- Redes Sociales -->
+        <div class="col-lg-4 col-md-6 footer-social">
+          <h4>Síguenos</h4>
+          <div class="social-links">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+          <a href="#mapa-sitio" class="footer-link">Mapa del Sitio</a>
+        </div>
+      </div>
+
+      <!-- Línea Divisoria -->
+      <div class="footer-divider"></div>
+
+      <!-- Derechos de Autor -->
+      <div class="footer-bottom">
+        <small>&copy; 2025 FeelVenture. Todos los derechos reservados.</small>
+      </div>
+    </div>
+    <!-- Bootstrap & Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </footer>
+</html>

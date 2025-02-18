@@ -1,12 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
   font-weight: 700; /* Negrita */
 }
 
-body, p, a, li, span, button {
-  font-family: 'Lato', sans-serif;
+body,
+p,
+a,
+li,
+span,
+button {
+  font-family: "Lato", sans-serif;
   font-size: 16px;
   font-weight: 400;
 }
@@ -24,14 +34,14 @@ p {
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 
 body {
-    background-color: #F9F7F7;
+  background-color: #f9f7f7;
 }
 
 /* Asegura que el header se mantenga fijo y no sea solapado */
@@ -50,7 +60,7 @@ body {
 
 /* Ajusta el tamaño del logo */
 .navbar-brand img {
-  height: 140px; 
+  height: 140px;
   width: auto;
   object-fit: contain;
 }
@@ -63,8 +73,8 @@ body {
 }
 
 .navbar .btn-outline-light:hover {
-  background-color: #FF6F3C;
-  border-color: #FF6F3C;
+  background-color: #ff6f3c;
+  border-color: #ff6f3c;
   color: white;
 }
 
@@ -81,58 +91,57 @@ body {
 }
 
 /* SOLUCIÓN PARA EL MENÚ EN TABLET Y MÓVIL */
-@media (max-width: 992px) { /* Tablet y móvil */
+@media (max-width: 992px) {
+  /* Tablet y móvil */
   .navbar-collapse {
-      background: #155263;
-      text-align: center;
-      padding: 15px;
-      position: absolute;
-      width: 100%;
-      top: 80px; /* Se coloca justo debajo del navbar */
-      left: 0;
-      z-index: 999;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    background: #155263;
+    text-align: center;
+    padding: 15px;
+    position: absolute;
+    width: 100%;
+    top: 80px; /* Se coloca justo debajo del navbar */
+    left: 0;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
 
   /* Cuando el menú está abierto, empuja el carrusel */
   .navbar-collapse.show + #carouselExperiencias {
-      margin-top: 240px; 
+    margin-top: 240px;
   }
 
   /* Asegura que los enlaces estén alineados */
   .navbar-nav {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
   }
 
   .nav-item {
-      padding: 10px;
+    padding: 10px;
   }
 
   .nav-link {
-      color: white;
-      font-size: 1.2rem;
+    color: white;
+    font-size: 1.2rem;
   }
 
   .nav-link:hover {
-      color: #FF6F3C;
+    color: #ff6f3c;
   }
 }
 
-
 .swiper img {
-    width: 100%;
-    border-radius: 10px;
+  width: 100%;
+  border-radius: 10px;
 }
-
 
 /* Cards */
 .experience-card {
   background: white;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   transition: all 0.4s ease-in-out;
   height: auto; /* Para que ajuste la altura correctamente */
@@ -140,7 +149,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-bottom: 10px;
+  padding: 15px; /* Ajustar el padding */
+  margin: 15px; /* Añadir margen para evitar solapamientos */
 }
 
 /* Imagen */
@@ -196,22 +206,22 @@ body {
 .btn-ver-mas {
   width: 100%;
   background: transparent;
-  color: #FF6F3C;
+  color: #ff6f3c;
   border: none;
   padding: 10px 15px;
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: auto;
-  border-radius: 6px; 
+  border-radius: 6px;
 }
 
 .experience-card.expanded .btn-ver-mas {
-  background: #FF6F3C;
+  background: #ff6f3c;
   color: white;
 }
 
 .btn-ver-mas:hover {
-  background: #FF6F3C;
+  background: #ff6f3c;
   color: white;
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
   border-radius: 10px; /* Hace que el botón se redondee más al pasar el cursor */
@@ -219,7 +229,7 @@ body {
 
 /* Sección de testimonios */
 .testimonios {
-  background-color: #FFC93C;
+  background-color: #ffc93c;
   padding: 60px;
 }
 
@@ -255,7 +265,7 @@ body {
 
 /* Sección de testimonios */
 .testimonios {
-  background-color: #FFC93C;
+  background-color: #ffc93c;
   padding: 60px;
 }
 
@@ -292,7 +302,7 @@ body {
 
 /* Sección de testimonios */
 .testimonios {
-  background-color: #FFC93C;
+  background-color: #ffc93c;
   padding: 60px;
 }
 
@@ -353,7 +363,6 @@ body {
   border-radius: 10px;
   object-fit: cover;
 }
-
 
 /* Tarjeta del testimonio */
 .testimonial-card {
@@ -422,8 +431,6 @@ body {
   color: yellow;
 }
 
-
-
 .cta {
   background: linear-gradient(135deg, #155263 0%, #1a6b82 100%);
   padding: 60px 40px;
@@ -432,7 +439,7 @@ body {
   overflow: hidden;
   max-width: 1000px;
   border-radius: 20px;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -455,13 +462,13 @@ body {
 }
 /* El resto del CSS se mantiene igual */
 .cta::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('../assets/img/pattern.png') repeat;
+  background: url("../assets/img/pattern.png") repeat;
   opacity: 0.1;
   border-radius: 20px;
 }
@@ -474,23 +481,22 @@ body {
   z-index: 1;
 }
 
-
 .cta-title {
   color: white;
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .cta-description {
-  color: rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 1.2rem;
   margin-bottom: 2rem;
 }
 
 .cta-button {
-  background: #FF6F3C;
+  background: #ff6f3c;
   color: white;
   border: none;
   padding: 15px 40px;
@@ -505,12 +511,12 @@ body {
 
 .cta-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   background: #ff835c;
 }
 
 .discount-badge {
-  background: #FFC93C;
+  background: #ffc93c;
   padding: 5px 10px;
   border-radius: 20px;
   font-size: 0.9rem;
@@ -520,17 +526,17 @@ body {
 
 @media (max-width: 768px) {
   .cta-title {
-      font-size: 2rem;
+    font-size: 2rem;
   }
-  
+
   .cta-description {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 
   .cta-logo {
-      bottom: 15px;
-      right: 15px;
-      width: 80px;
+    bottom: 15px;
+    right: 15px;
+    width: 80px;
   }
 }
 
@@ -551,18 +557,20 @@ body {
 }
 
 .footer-main h4::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 60px;
   height: 3px;
-  background-color: #FF6F3C;
+  background-color: #ff6f3c;
 }
 
 /* Estilos de cada sección */
-.footer-info, .footer-contact, .footer-social {
+.footer-info,
+.footer-contact,
+.footer-social {
   margin-bottom: 30px;
 }
 
@@ -605,7 +613,7 @@ body {
 }
 
 .footer-contact i {
-  color: #FF6F3C;
+  color: #ff6f3c;
   font-size: 1.2rem;
 }
 
@@ -631,7 +639,7 @@ body {
 }
 
 .social-links a:hover {
-  background: #FF6F3C;
+  background: #ff6f3c;
   color: white;
 }
 
@@ -646,7 +654,7 @@ body {
 }
 
 .footer-link:hover {
-  color: #FF6F3C;
+  color: #ff6f3c;
 }
 
 /* Línea Divisoria */
@@ -663,4 +671,122 @@ body {
   opacity: 0.7;
 }
 
+/* Sección de contacto */
+.contact-section {
+  padding: 60px 0;
+  text-align: center;
+}
 
+.contact-section h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #155263;
+  margin-bottom: 10px;
+}
+
+.contact-section p {
+  font-family: "Lato", sans-serif;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Estilos del formulario */
+form {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-label {
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.form-control {
+  font-size: 1rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Botón de enviar */
+.contact-btn {
+  background-color: #ff6f3c;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.contact-btn:hover {
+  background-color: #ff835c;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 111, 60, 0.4);
+}
+
+/* Filtros */
+.filter-section {
+  text-align: center;
+  margin-top: 120px;
+}
+
+/* Botones de filtro */
+.filter-btn {
+  background-color: #155263;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background-color: #FF6F3C;
+}
+
+.experience-card {
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  height: 100%; /* 🔥 Hace que todas las cards tengan la misma altura */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.experience-container {
+  justify-content: center;
+  padding: 20px;
+}
+
+/* 🔥 Evita que las imágenes dentro de las cards se desborden */
+.experience-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media (min-width: 992px) {
+  .experience-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .experience-card {
+    flex: 0 0 calc(33.333% - 30px); /* Tres tarjetas por fila con margen */
+    margin-bottom: 30px;
+  }
+}
