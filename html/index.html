@@ -22,11 +22,16 @@
     />
     <script src="../js/script.js" defer></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 
     <!-- Google Fonts: Montserrat y Lato -->
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/style.css" />
@@ -51,7 +56,9 @@
             <li class="nav-item">
               <a class="nav-link" href="experiencias.html">Experiencias</a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html">Contacto</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Iniciar Sesión</a>
             </li>
@@ -184,62 +191,90 @@
 
     <!-- Call to Action -->
     <section class="cta">
-        <div class="cta-content">
-            <h2 class="cta-title">¡Únete a FeelVenture y comienza tu aventura!</h2>
-            <p class="cta-description">Descubre experiencias únicas y vive momentos inolvidables</p>
-            <button class="cta-button">
-                <span class="button-text">REGÍSTRATE AHORA</span>
-                <span class="discount-badge">-20%</span>
-            </button>
-        </div>
-        <div class="cta-logo">
-          <img src="../assets/img/logo Feelventure.png" alt="FeelVenture Logo">
+      <div class="cta-content">
+        <h2 class="cta-title">¡Únete a FeelVenture y comienza tu aventura!</h2>
+        <p class="cta-description">
+          Descubre experiencias únicas y vive momentos inolvidables
+        </p>
+        <button class="cta-button">
+          <span class="button-text">REGÍSTRATE AHORA</span>
+          <span class="discount-badge">-20%</span>
+        </button>
+      </div>
+      <div class="cta-logo">
+        <img src="../assets/img/logo Feelventure.png" alt="FeelVenture Logo" />
       </div>
     </section>
   </body>
   <!-- Footer Mejorado -->
-<footer class="footer-main">
-  <div class="container">
+  <!-- Footer Mejorado -->
+  <footer class="footer-main">
+    <div class="container">
       <div class="row">
-          <!-- Información de la Empresa -->
-          <div class="col-lg-4 col-md-12 footer-info">
-              <h4>FeelVenture</h4>
-              <p>Descubre experiencias únicas y vive momentos inolvidables con FeelVenture.</p>
-              <a href="#inicio" class="footer-link">Volver al Inicio</a>
-          </div>
+        <!-- Información de la Empresa -->
+        <div class="col-lg-4 col-md-12 footer-info">
+          <h4>FeelVenture</h4>
+          <p>
+            Descubre experiencias únicas y vive momentos inolvidables con
+            FeelVenture.
+          </p>
+          <a href="#inicio" class="footer-link">Volver al Inicio</a>
+        </div>
 
-          <!-- Contacto -->
-          <div class="col-lg-4 col-md-6 footer-contact">
-              <h4>Contacto</h4>
-              <ul class="contact-list">
-                  <li><i class="fa-solid fa-location-dot"></i> Av. Principal 123, Ciudad</li>
-                  <li><i class="fa-solid fa-phone"></i> +123 456 789</li>
-                  <li><i class="fa-solid fa-envelope"></i> info@feelventure.com</li>
-              </ul>
-          </div>
+        <!-- Contacto -->
+        <div class="col-lg-4 col-md-6 footer-contact">
+          <h4>Contacto</h4>
+          <ul class="contact-list">
+            <li>
+              <i class="fa-solid fa-location-dot"></i> Av. Principal 123, Ciudad
+            </li>
+            <li><i class="fa-solid fa-phone"></i> +123 456 789</li>
+            <li><i class="fa-solid fa-envelope"></i> info@feelventure.com</li>
+          </ul>
+        </div>
 
-          <!-- Redes Sociales -->
-          <div class="col-lg-4 col-md-6 footer-social">
-              <h4>Síguenos</h4>
-              <div class="social-links">
-                  <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                  <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-              </div>
-              <a href="#mapa-sitio" class="footer-link">Mapa del Sitio</a>
+        <!-- Redes Sociales y Mapa del Sitio -->
+        <div class="col-lg-4 col-md-6 footer-social">
+          <h4>Síguenos</h4>
+          <div class="social-links">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
           </div>
+          <!-- Botón para desplegar el mapa del sitio, centrado debajo de las RRSS -->
+          <button
+            class="footer-link btn btn-link text-center"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#sitemapCollapse"
+            aria-expanded="false"
+            aria-controls="sitemapCollapse"
+          >
+            Mapa del Sitio
+          </button>
+          <!-- Mapa del sitio desplegable -->
+          <div class="collapse" id="sitemapCollapse">
+            <ul class="sitemap-list">
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="experiencias.html">Experiencias</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+              <li><a href="#">Iniciar Sesión</a></li>
+              <li><a href="#">Registrarse</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-      
+
       <!-- Línea Divisoria -->
       <div class="footer-divider"></div>
 
       <!-- Derechos de Autor -->
       <div class="footer-bottom">
-          <small>&copy; 2025 FeelVenture. Todos los derechos reservados.</small>
+        <small>© 2025 FeelVenture. Todos los derechos reservados.</small>
       </div>
-  </div>
-      <!-- Bootstrap & Swiper JS -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-</footer>
+    </div>
+    <!-- Bootstrap & Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </footer>
 </html>
