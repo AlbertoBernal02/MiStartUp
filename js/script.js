@@ -144,3 +144,66 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const loginForm = document.getElementById("loginForm");
+  const passwordInput = document.getElementById("password");
+  const passwordHelp = document.getElementById("passwordHelp");
+  const emailInput = document.getElementById("email");
+
+  if (loginForm) {
+      // Validación en tiempo real para email y contraseña
+      emailInput.addEventListener("input", function () {
+          if (!this.value.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)) {
+              this.style.borderColor = "#dc3545";
+          } else {
+              this.style.borderColor = "#28a745";
+          }
+      });
+
+      passwordInput.addEventListener("input", function () {
+          const password = this.value;
+          const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+
+          if (password && !passwordRegex.test(password)) {
+              passwordHelp.textContent = "La contraseña debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas, números y caracteres especiales.";
+              passwordHelp.style.color = "#dc3545";
+              this.style.borderColor = "#dc3545";
+          } else {
+              passwordHelp.textContent = "Contraseña válida";
+              passwordHelp.style.color = "#28a745";
+              this.style.borderColor = "#28a745";
+          }
+      });
+
+      // Validación del formulario al enviar
+      loginForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          
+          const email = emailInput.value;
+          const password = passwordInput.value;
+          const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+
+          if (!email.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)) {
+              passwordHelp.textContent = "Por favor, ingresa un correo electrónico válido.";
+              emailInput.style.borderColor = "#dc3545";
+              return;
+          }
+
+          if (!passwordRegex.test(password)) {
+              passwordHelp.textContent = "La contraseña debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas, números y caracteres especiales.";
+              passwordInput.style.borderColor = "#dc3545";
+              return;
+          }
+
+          // Si pasa todas las validaciones
+          passwordHelp.textContent = "Inicio de sesión exitoso!";
+          passwordHelp.style.color = "#28a745";
+          alert("¡Bienvenido a FeelVenture!");
+          // Aquí puedes agregar la lógica real de autenticación con un backend
+          loginForm.reset();
+          emailInput.style.borderColor = "#ccc";
+          passwordInput.style.borderColor = "#ccc";
+      });
+  }
+});
