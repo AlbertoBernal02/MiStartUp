@@ -1,4 +1,4 @@
-# ![FeelVenture Logo](../assets/img/logo Feelventure.png)  
+# ![FeelVenture Logo](../assets/img/logoFeelventure.png)  
 <p align="center">
   <b>Vive la aventura, siente la emoción. 🌍✨</b>
 </p>  
