@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/img/logo_Feelventure.png" alt="FeelVenture Logo" width="200">
+  <img src="assets/img/logodoblado.png" alt="FeelVenture Logo" width="200">
 </p>
 
 <p align="center">
