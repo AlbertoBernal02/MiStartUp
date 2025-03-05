@@ -1,4 +1,5 @@
-# ![FeelVenture Logo](../assets/img/logoFeelventure.png)  
+# ![FeelVenture Logo](C:/Users/abern/OneDrive/Escritorio/FeelVenture/MiStartUp/assets/img/logoFeelventure.png)  
+
 <p align="center">
   <b>Vive la aventura, siente la emoción. 🌍✨</b>
 </p>  
