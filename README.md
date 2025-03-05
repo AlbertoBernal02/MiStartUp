@@ -1,3 +1,10 @@
+<p align="center">
+  <img src="assets/img/logo_Feelventure.png" alt="FeelVenture Logo" width="200">
+</p>
+
+<p align="center">
+  <b>Vive la aventura, siente la emoción. 🌍✨</b>
+</p>  
 ## 📌 **¿Qué es FeelVenture?**  
 FeelVenture es la plataforma donde los amantes de la aventura y las experiencias únicas pueden encontrar y reservar actividades inolvidables. Desde emocionantes **escape rooms** hasta majestuosos **viajes en globo** y espectaculares **vuelos en helicóptero**, aquí **creamos recuerdos, no solo actividades**.  
 
