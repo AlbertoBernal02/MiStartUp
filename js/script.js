@@ -10,6 +10,8 @@ new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+// Evento para botones "Ver más"
 document.addEventListener("DOMContentLoaded", function () {
   const buttons = document.querySelectorAll(".btn-ver-mas");
 
@@ -18,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const card = this.closest(".experience-card");
       card.classList.toggle("expanded");
 
-      // Cambiar texto del botón según el estado
       this.textContent = card.classList.contains("expanded")
         ? "Ver menos"
         : "Ver más";
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Testimonios
 const testimonios = [
   {
     nombre: "Juan Pérez",
@@ -52,6 +54,7 @@ const testimonios = [
 
 let indiceActual = 0;
 
+// Testimonios dinámicos
 document.addEventListener("DOMContentLoaded", function () {
   const testimonials = [
     {
@@ -86,11 +89,10 @@ document.addEventListener("DOMContentLoaded", function () {
     nameElement.textContent = testimonial.name;
     textElement.textContent = testimonial.text;
 
-    // Verificar si la imagen existe antes de cambiarla
     const img = new Image();
     img.src = testimonial.image;
     img.onload = () => (imgElement.src = testimonial.image);
-    img.onerror = () => (imgElement.src = "usuario-default.jpg"); // Imagen por defecto si no existe
+    img.onerror = () => (imgElement.src = "usuario-default.jpg");
 
     let starsHtml = "";
     for (let i = 1; i <= 5; i++) {
@@ -116,10 +118,10 @@ document.addEventListener("DOMContentLoaded", function () {
       updateTestimonial(currentIndex);
     });
 
-  // Cargar la primera reseña al inicio
   updateTestimonial(currentIndex);
 });
 
+// Filtros de experiencias
 document.addEventListener("DOMContentLoaded", function () {
   const filterButtons = document.querySelectorAll(".filter-btn");
   const experienceCards = document.querySelectorAll(".experience-card");
@@ -145,65 +147,93 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Validación del formulario de login
 document.addEventListener("DOMContentLoaded", function () {
   const loginForm = document.getElementById("loginForm");
   const passwordInput = document.getElementById("password");
   const passwordHelp = document.getElementById("passwordHelp");
   const emailInput = document.getElementById("email");
+  const emailHelp = document.getElementById("emailHelp");
 
   if (loginForm) {
-      // Validación en tiempo real para email y contraseña
-      emailInput.addEventListener("input", function () {
-          if (!this.value.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)) {
-              this.style.borderColor = "#dc3545";
-          } else {
-              this.style.borderColor = "#28a745";
-          }
-      });
+    // Validación en tiempo real para email
+    emailInput.addEventListener("input", function () {
+      if (this.value.length === 0) {
+        emailHelp.textContent = "";
+        this.style.borderColor = "#ccc";
+      } else if (!this.value.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)) {
+        emailHelp.textContent = "Por favor, ingresa un correo electrónico válido.";
+        emailHelp.style.color = "#dc3545";
+        this.style.borderColor = "#dc3545";
+      } else {
+        emailHelp.textContent = "";
+        this.style.borderColor = "#28a745";
+      }
+    });
 
-      passwordInput.addEventListener("input", function () {
-          const password = this.value;
-          const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+    // Validación en tiempo real para contraseña
+    passwordInput.addEventListener("input", function () {
+      const password = this.value;
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*_])[A-Za-z\d!@#$%^&*_]{8,}$/;
 
-          if (password && !passwordRegex.test(password)) {
-              passwordHelp.textContent = "La contraseña debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas, números y caracteres especiales.";
-              passwordHelp.style.color = "#dc3545";
-              this.style.borderColor = "#dc3545";
-          } else {
-              passwordHelp.textContent = "Contraseña válida";
-              passwordHelp.style.color = "#28a745";
-              this.style.borderColor = "#28a745";
-          }
-      });
+      if (password.length === 0) {
+        passwordHelp.textContent = "";
+        this.style.borderColor = "#ccc";
+      } else if (!passwordRegex.test(password)) {
+        passwordHelp.textContent =
+          "La contraseña debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas, números y caracteres especiales.";
+        passwordHelp.style.color = "#dc3545";
+        this.style.borderColor = "#dc3545";
+      } else {
+        passwordHelp.textContent = ""; // 🔥 Se borra el mensaje cuando es válida
+        this.style.borderColor = "#28a745";
+      }
+    });
 
-      // Validación del formulario al enviar
-      loginForm.addEventListener("submit", function (e) {
-          e.preventDefault();
-          
-          const email = emailInput.value;
-          const password = passwordInput.value;
-          const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+    // Validación del formulario al enviar
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-          if (!email.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)) {
-              passwordHelp.textContent = "Por favor, ingresa un correo electrónico válido.";
-              emailInput.style.borderColor = "#dc3545";
-              return;
-          }
+      const email = emailInput.value;
+      const password = passwordInput.value;
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*_])[A-Za-z\d!@#$%^&*_]{8,}$/;
 
-          if (!passwordRegex.test(password)) {
-              passwordHelp.textContent = "La contraseña debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas, números y caracteres especiales.";
-              passwordInput.style.borderColor = "#dc3545";
-              return;
-          }
+      let hasError = false;
 
-          // Si pasa todas las validaciones
-          passwordHelp.textContent = "Inicio de sesión exitoso!";
-          passwordHelp.style.color = "#28a745";
-          alert("¡Bienvenido a FeelVenture!");
-          // Aquí puedes agregar la lógica real de autenticación con un backend
-          loginForm.reset();
-          emailInput.style.borderColor = "#ccc";
-          passwordInput.style.borderColor = "#ccc";
-      });
+      if (!email.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)) {
+        emailHelp.textContent = "Por favor, ingresa un correo electrónico válido.";
+        emailHelp.style.color = "#dc3545";
+        emailInput.style.borderColor = "#dc3545";
+        hasError = true;
+      } else {
+        emailHelp.textContent = "";
+        emailInput.style.borderColor = "#28a745";
+      }
+
+      if (!passwordRegex.test(password)) {
+        passwordHelp.textContent =
+          "La contraseña debe tener al menos 8 caracteres, incluyendo mayúsculas, minúsculas, números y caracteres especiales.";
+        passwordHelp.style.color = "#dc3545";
+        passwordInput.style.borderColor = "#dc3545";
+        hasError = true;
+      } else {
+        passwordHelp.textContent = ""; // ✅ BORRA EL MENSAJE AL SER VÁLIDA
+        passwordInput.style.borderColor = "#28a745";
+      }
+
+      if (hasError) return;
+
+      // ✅ Si todo es válido, reseteamos y limpiamos mensajes
+      emailHelp.textContent = "";
+      passwordHelp.textContent = "";
+      alert("¡Bienvenido a FeelVenture!");
+      loginForm.reset();
+      emailInput.style.borderColor = "#ccc";
+      passwordInput.style.borderColor = "#ccc";
+
+
+      // 🔥 REDIRECCIÓN AL INDEX
+      window.location.href = "index.html";
+    });
   }
 });
